@@ -1,20 +1,20 @@
 import java.util.Scanner;
 
 public class DepositCalculator {
-    double calculateComplexPercent(double a, double y, int d ) {
+    double calculateComplexPercent(double a, double y, int d) {
         double pay = a * Math.pow((1 + y / 12), 12 * d);
 
         return roundPowedValue(pay, 2);
     }
 
-    double calculateSimplePercent(double doubleAmount,double doubleYearRate, int depositPeriod) {
+    double calculateSimplePercent(double doubleAmount, double doubleYearRate, int depositPeriod) {
         return roundPowedValue(doubleAmount + doubleAmount * doubleYearRate * depositPeriod, 2);
     }
 
     double roundPowedValue(double value, int places) {
-        double Scale = Math.pow(10, places);
+        double scale = Math.pow(10, places);
 
-        return Math.round(value*Scale) / Scale;
+        return Math.round(value * scale) / scale;
     }
 
     void toInvestMoney() {
